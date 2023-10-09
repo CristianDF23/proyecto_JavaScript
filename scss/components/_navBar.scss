@@ -1,0 +1,159 @@
+nav {
+    z-index: 100;
+    width: 100%;
+    background: #242526;
+    top: 0;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1300px;
+    padding: 0px 30px;
+    margin: auto auto;
+    height: 70px;
+    gap: 4rem !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper .nav-links {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+
+.nav-links li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    border-bottom: 3px solid #f2f2f2;
+    transition: none;
+}
+
+.nav-links li:hover .mega-box {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mega-box {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mega-box .contents {
+    background: #242526;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mega-box .contents .row {
+    width: calc(25% - 30px);
+    line-height: 45px;
+}
+
+.contents .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contents .row header {
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contents .row .mega-links {
+    margin-left: -40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.row .mega-links li {
+    padding: 0 20px;
+}
+
+.row .mega-links li p {
+    padding: 0px;
+    padding: 0 10px;
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+.row .mega-links li p:hover {
+    cursor: pointer;
+}
+
+.wrapper .btnM {
+    margin-right: 10px;
+    text-align: end;
+    width: 700px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper .btnM.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.mobile-item {
+    padding: 0 !important;
+
+    a {
+        padding-left: 20px !important;
+        color: #f2f2f2 !important;
+    }
+}
+
+nav input {
+    display: none;
+}
+
+.body-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.body-text div {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.cotizacionUSD {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
