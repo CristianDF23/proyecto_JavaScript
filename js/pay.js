@@ -80,6 +80,7 @@ btnComprar.innerText = "Comprar";
 
 // Botones Para Elegir Cuotas
 
+const cuotaElegida = document.getElementById('cuotaElegida')
 const cuotaSeis = document.getElementById('cuotaSeis')
 const cuotaNueve = document.getElementById('cuotaNueve')
 const cuotaDoce = document.getElementById('cuotaDoce')
@@ -92,16 +93,19 @@ cuotaSeis.addEventListener('click', () => {
     arrayCuotas = [];
     valorCuota(precioConIvaIncluido, 6);
     mostrarValoresCuota();
+    cuotaElegida.innerText = '6 Cuotas'
 });
 cuotaNueve.addEventListener('click', () => {
     arrayCuotas = [];
     valorCuota((precioConIvaIncluido), 9);
     mostrarValoresCuota();
+    cuotaElegida.innerText = '9 Cuotas'
 });
 cuotaDoce.addEventListener('click', () => {
     arrayCuotas = [];
     valorCuota(precioConIvaIncluido, 12);
     mostrarValoresCuota();
+    cuotaElegida.innerText = '12 Cuotas'
 });
 
 function valorCuota(total, cuota) {
