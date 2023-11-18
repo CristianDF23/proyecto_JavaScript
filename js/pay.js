@@ -138,7 +138,7 @@ function mostrarValoresCuota() {
 }
 
 // Pago En Efectivo
-
+let metodoPago;
 btnEfectivo.addEventListener('click', () => {
     contenedorMediosPago.style.display = 'none'
     contenedorTarjeta.style.display = 'flex'
@@ -147,6 +147,7 @@ btnEfectivo.addEventListener('click', () => {
     mostrarDescuento.innerText = `Descuento: $ ${valorDeDescuento.toLocaleString()}`
     mostrarIva.innerText = `Total: $ ${((precioSubtotal - valorDeDescuento) * 1.21).toLocaleString()} (IVA incluido)`;
     pagoEfectivo();
+    metodoPago = 'Efectivo';
 })
 
 // Creación Aleatoria De Números De Referencia De Pago
@@ -181,22 +182,12 @@ function pagoEfectivo() {
 // Botón Para Finalizar La Compra
 
 btnComprar.addEventListener('click', () => {
-    finalizaCompra();
-})
-
-function finalizaCompra() {
     const nombre = document.getElementById('nombreTarjeta').value.trim();
     const numero = document.getElementById('numeroTarjeta').value.trim();
     const vencimiento = document.getElementById('vencimientoTarjeta').value.trim();
     const codigo = document.getElementById('CVCTarjeta').value.trim();
 
-    if (nombre === "" || numero === "" || vencimiento === "" || codigo === "") {
-        swal({
-            title: "COMPLETE LOS DATOS DE TARJETA",
-            icon: "warning",
-            buttons: false
-        });
-    } else {
+    if (metodoPago === 'Efectivo') {
         swal({
             title: "GRACIAS POR SU COMPRA!",
             icon: "success",
@@ -206,5 +197,16 @@ function finalizaCompra() {
             window.location.href = '../index.html';
             localStorage.clear();
         }, 3000);
+    } else if (nombre === "" || numero === "" || vencimiento === "" || codigo === "") {
+        swal({
+            title: "COMPLETE LOS DATOS DE TARJETA",
+            icon: "warning",
+            buttons: false
+        });
     }
-}
+
+})
+
+
+
+
